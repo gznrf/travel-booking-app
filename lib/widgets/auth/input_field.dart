@@ -4,15 +4,19 @@ class UserInputField extends StatelessWidget {
   const UserInputField({
     super.key,
     required this.subInputTitle,
+    required this.height,
+    required this.width,
   });
 
   final String subInputTitle;
+  final double height;
+  final double width;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 305,
-      height: 90,
+      width: width,
+      height: height,
       child: TextField(
         decoration: InputDecoration(
           border: OutlineInputBorder(
