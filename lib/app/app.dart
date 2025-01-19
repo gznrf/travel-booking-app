@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hostel_booking/screens/home.dart';
 import '../screens/registration.dart';
 
 class HostelBookingApp extends StatelessWidget {
@@ -15,7 +16,7 @@ class HostelBookingApp extends StatelessWidget {
         useMaterial3: false,
       ),
 
-      home: const RegistrationPage(),
+      home: const HomePage(),
     );
   }
 }
