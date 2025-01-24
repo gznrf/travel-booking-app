@@ -66,7 +66,7 @@ class Header extends StatelessWidget {
                     color: Color.fromRGBO(77, 101, 141, 1),
                     borderRadius: BorderRadius.circular(23),
                   ),
-                  child: Image.asset('../lib/app/assets/images/header_account_icon.png'),
+                  child: Image.asset('../assets/icons/header/account_icon.png'),
                 ),
             ],
           ),

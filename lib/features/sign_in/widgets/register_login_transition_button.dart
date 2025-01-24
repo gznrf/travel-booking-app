@@ -12,7 +12,7 @@ class RegisterLoginTransitionButton extends StatelessWidget{
   final double containerHeight;
   final double containerWidth;
   final String buttonText;
-  final StatefulWidget page;
+  final String page;
 
   @override
   Widget build(BuildContext context) {
@@ -29,8 +29,7 @@ class RegisterLoginTransitionButton extends StatelessWidget{
             ),
           ),
           onPressed: (){
-            Navigator.push(context, MaterialPageRoute(builder: (context) => page),
-            );
+            Navigator.pushNamed(context, page);
           },
         ),
       )
