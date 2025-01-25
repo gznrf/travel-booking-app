@@ -23,8 +23,10 @@ class CountrySearchBar extends StatelessWidget {
                 fontSize: 34,
               ),
               decoration: InputDecoration(
+                fillColor: Colors.black,
                 icon: Image.asset('../assets/icons/search_icon.png'),
                 border: OutlineInputBorder(
+
                   borderRadius: BorderRadius.only(topRight: Radius.circular(23), bottomRight: Radius.circular(23)),
                 ),
               ),

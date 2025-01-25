@@ -44,7 +44,7 @@ class _LoginPage extends State<LoginPage> {
                     containerHeight: 40,
                     containerWidth: 300,
                     buttonText: 'Еще нет аккаунта? Зарегистрироваться',
-                    page: 'sign-up',
+                    page: '/sign-up',
                   ),
                 ],
               ),

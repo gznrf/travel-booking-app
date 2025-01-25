@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hostel_booking/theme/colors.dart';
 
 class ConfirmationButton extends StatelessWidget{
   const ConfirmationButton({
@@ -16,13 +17,13 @@ class ConfirmationButton extends StatelessWidget{
   Widget build(BuildContext context){
     return TextButton(
       style: TextButton.styleFrom(
-        backgroundColor: Color.fromRGBO(77, 101, 141, 1),
+        backgroundColor: DefaultColors.mainBlue,
         minimumSize: Size(width, height),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(8),
         ),
       ),
-      onPressed: null,
+      onPressed: () => Navigator.pushNamed(context, '/home'),
       child: Text(
         buttonText,
         style: TextStyle(

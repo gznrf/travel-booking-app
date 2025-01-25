@@ -17,29 +17,26 @@ class _HomePage extends State<HomePage> {
       body: SingleChildScrollView(
           child: Column(
             children: [
-              Column(
-                children: [
-                  Header(),
-                  MainContainer(
-                      children: Column(
-                        children: [
-                          MainHeading(
-                              headingText: 'Выберите страну и вам покажутся самые лучшие варианты',
-                          ),
-                          CountrySearchBar(),
-                          CategoryTitle(
-                            categoryText: 'Разные отели по категориям',
-                          ),
-                          CategoryRow(categoryText: 'Для встреч по бизнесу и совещаний',),
-                          CategoryRow(categoryText: 'Для жаркого отдыха',),
+              Header(),
+              MainContainer(
+                children: Column(
+                  children: [
+                    MainHeading(
+                      headingText: 'Выберите страну и вам покажутся самые лучшие варианты',
+                    ),
+                    CountrySearchBar(),
+                    CategoryTitle(
+                      categoryText: 'Разные отели по категориям',
+                    ),
+                    CategoryRow(categoryText: 'Для встреч по бизнесу и совещаний', textContainerHeight: 60,),
+                    CategoryRow(categoryText: 'Для жаркого отдыха', textContainerHeight: 40,),
 
-                        ],
-                      ),
-                  ),
-                ],
-              )
+                  ],
+                ),
+              ),
+              Footer(),
             ],
-          )
+          ),
       ),
     );
   }

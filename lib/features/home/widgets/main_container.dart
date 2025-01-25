@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hostel_booking/theme/colors.dart';
 
 class MainContainer extends StatelessWidget {
   const MainContainer({
@@ -16,7 +17,7 @@ class MainContainer extends StatelessWidget {
         width: 1189,
         height: 1368,
         decoration: BoxDecoration(
-          color: Color.fromRGBO(77, 101, 141, 1),
+          color: DefaultColors.mainBlue,
           borderRadius: BorderRadius.circular(23),
         ),
         margin: EdgeInsets.only(bottom: 10, top: 10),

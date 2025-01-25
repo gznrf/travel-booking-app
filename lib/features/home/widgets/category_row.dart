@@ -6,9 +6,11 @@ class CategoryRow extends StatelessWidget {
   const CategoryRow({
     super.key,
     required this.categoryText,
+    required this.textContainerHeight,
   });
 
   final String categoryText;
+  final double textContainerHeight;
 
 
   @override
@@ -17,6 +19,7 @@ class CategoryRow extends StatelessWidget {
       children: [
         CategorySubtitle(
           categoryText: categoryText,
+          textContainerHeight: textContainerHeight,
         ),
         Container(
           alignment: Alignment.center,
@@ -49,6 +52,9 @@ class CategoryRow extends StatelessWidget {
               ),
             ],
           ),
+        ),
+        SizedBox(
+          height: 35,
         ),
       ],
     );

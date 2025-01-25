@@ -1,7 +1,6 @@
 
 import 'package:flutter/material.dart';
 
-const defaultColors = {
-  'mainBlueColor': HexColor,
-
+class DefaultColors {
+  static const Color mainBlue = Color.fromRGBO(66, 123, 217, 1);
 }

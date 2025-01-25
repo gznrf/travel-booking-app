@@ -11,7 +11,7 @@ class HotelBookingApp extends StatelessWidget {
       title: 'Бронирование отелей',
       theme: theme,
       routes: routes,
-      initialRoute: '/home',
+      initialRoute: '/sign-up',
     );
   }
 }

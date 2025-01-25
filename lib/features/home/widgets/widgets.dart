@@ -5,3 +5,4 @@ export 'hotel_passport.dart';
 export 'main_container.dart';
 export 'category_title.dart';
 export 'category_subtitle.dart';
+export 'footer.dart';

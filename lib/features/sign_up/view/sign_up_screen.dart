@@ -54,7 +54,7 @@ class _RegistrationPage extends State<RegistrationPage> {
                   containerHeight: 22,
                   containerWidth: 301,
                   buttonText: 'Уже зарегистрированы? Войти',
-                  page: 'sign-in',
+                  page: '/sign-in',
                 ),
               ],
             ),
