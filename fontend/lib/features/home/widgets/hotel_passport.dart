@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hostel_booking/repositories/hotels/hotel_repo.dart';
 
 class HotelPassport extends StatelessWidget {
   const HotelPassport({
@@ -21,9 +22,10 @@ class HotelPassport extends StatelessWidget {
           Column(
             children: [
               InkWell(
-                onTap: () {
-
-                 /*Navigator.pushNamed(context, '/hotel');*/
+                onTap: () async {
+                  var hotelsResponse = await HotelRepo.getHotelsByCategory('buisnes');
+                  var responseCode = hotelsResponse['status_code'];
+                  debugPrint(hotelsResponse['hotels_list'].toString());
                 },
                 child: Container(
                   width: 229,

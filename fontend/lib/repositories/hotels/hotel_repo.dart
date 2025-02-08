@@ -1,29 +1,27 @@
 import 'dart:convert';
-
-import 'package:hostel_booking/api/paths.dart';
+import 'package:flutter/material.dart';
 import 'package:dio/dio.dart';
 
-class GetAllHotelsByCategory{
-  /*Future<int> getHotelsByCategory(String hotelsCategory) async{
-    Dio dio = Dio();
+import '../routes/routes.dart';
 
-    dio.options.headers['Authorization'] = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MzgzNjE1ODUsImlhdCI6MTczODMxODM4NSwidXNlcl9pZCI6MX0.1sXhTjOVPE_GcikdGYTBvlv4xdpVpU7v2LbhhEbdH1M';
-    final response = await dio.get(
-        URLPath + allHotelsPath,
-        data: {
-          "hotel_category": hotelsCategory,
-        },
+class HotelRepo{
+  static Future<Map<String, dynamic>> getHotelsByCategory(String hotelsCategory) async{
 
+    Map<String, String> requestBody = {
+      "hotel_category":hotelsCategory,
+    };
+
+    debugPrint(requestBody.toString());
+    final response = await Dio().get(
+        allHotelsRoute,
+        queryParameters: requestBody,
     );
 
-    if (response.statusCode == 200) {
-      Map<String, dynamic> data = json.decode(response.data);
-      List<dynamic> hotelsJson = data['hotels'];
+    Map<String, dynamic> responseData = {
+      "status_code":response.statusCode,
+      "hotels_list":jsonDecode(response.toString()),
+    };
 
-      print(hotelsJson.map((json) => HotelModel.fromJson(json)).toList());
-      return hotelsJson.map((json) => HotelModel.fromJson(json)).toList();
-    } else {
-      throw Exception('Не удалось загрузить отели');
-    }
-  }*/
+    return responseData;
+  }
 }
