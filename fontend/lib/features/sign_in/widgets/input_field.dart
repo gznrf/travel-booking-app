@@ -6,11 +6,13 @@ class UserInputField extends StatelessWidget {
     required this.subInputTitle,
     required this.height,
     required this.width,
+    required this.controller,
   });
 
   final String subInputTitle;
   final double height;
   final double width;
+  final TextEditingController controller;
 
   @override
   Widget build(BuildContext context) {
@@ -18,6 +20,7 @@ class UserInputField extends StatelessWidget {
       width: width,
       height: height,
       child: TextField(
+        controller: controller,
         decoration: InputDecoration(
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(8),

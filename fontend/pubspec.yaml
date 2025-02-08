@@ -12,10 +12,13 @@ dependencies:
     sdk: flutter
   cupertino_icons: ^1.0.8
   flutter_linkify: ^6.0.0
+  dio: ^5.8.0+1
+  flutter_secure_storage:
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
 
   flutter_lints: ^5.0.0
 

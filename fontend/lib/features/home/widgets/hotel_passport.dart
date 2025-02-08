@@ -21,7 +21,10 @@ class HotelPassport extends StatelessWidget {
           Column(
             children: [
               InkWell(
-                onTap: () => Navigator.pushNamed(context, '/hotel'),
+                onTap: () {
+
+                 /*Navigator.pushNamed(context, '/hotel');*/
+                },
                 child: Container(
                   width: 229,
                   height: 285,

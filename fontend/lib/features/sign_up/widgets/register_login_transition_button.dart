@@ -14,6 +14,7 @@ class RegisterLoginTransitionButton extends StatelessWidget{
   final String buttonText;
   final String page;
 
+
   @override
   Widget build(BuildContext context) {
     return Container(

@@ -12,6 +12,12 @@ class HomePage extends StatefulWidget {
 class _HomePage extends State<HomePage> {
 
   @override
+  void didChangeDependencies() {
+
+    super.didChangeDependencies();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
