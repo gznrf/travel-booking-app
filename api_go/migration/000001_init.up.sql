@@ -31,4 +31,21 @@ CREATE TABLE hotels_photos
     to_id INT NOT NULL REFERENCES photos (id)  on delete cascade  not null
 );
 
+INSERT INTO hotels(name, category, address, stars_count, rating)
+VALUES
+       ("Ocean", "buisnes", "qweasd", 4, 5),
+       ("Big Ben", "sunny days", "qwe", 4, 5),
+       ("Granny home", "sunny days", "asd", 4, 5),
+       ("Gargamel", "buisnes", "qweqwe", 4, 5),
+       ("Obichniy", "buisnes", "asdasd", 4, 5);
+
+INSERT INTO photos(main_photo_path, photo_path)
+VALUES
+    ('assets/images/1.jpg', ''),
+    ('assets/images/2.jpg', ''),
+    ('assets/images/3.jpg', ''),
+    ('assets/images/4.jpg', ''),
+    ('assets/images/5.jpg', '');
+
+
 

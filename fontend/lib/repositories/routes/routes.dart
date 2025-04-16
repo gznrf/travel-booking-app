@@ -1,6 +1,6 @@
 
 
-final String defaultRoute = 'http://localhost:8080';
+final String defaultRoute = 'http://hostel_api:8080';
 
 final String signUpRoute = '$defaultRoute/auth/sign-up'; //POST
 final String signInRoute = '$defaultRoute/auth/sign-in'; //POST

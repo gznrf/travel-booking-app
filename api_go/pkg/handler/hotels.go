@@ -1,7 +1,6 @@
 package handler
 
 import (
-	"encoding/json"
 	"github.com/gorilla/mux"
 	"hotel_booking/models"
 	"hotel_booking/utils"
@@ -12,10 +11,7 @@ import (
 func (h *Handler) getAllHotelsByCategory(w http.ResponseWriter, r *http.Request) {
 	var input models.HotelsByCategoryInput
 
-	if err := json.NewDecoder(r.Body).Decode(&input); err != nil {
-		writeError(w, 400, err)
-		return
-	}
+	input.Category = r.URL.Query().Get("hotel_category")
 
 	if err := utils.Validate(&input); err != nil {
 		writeError(w, 400, err)
@@ -29,7 +25,8 @@ func (h *Handler) getAllHotelsByCategory(w http.ResponseWriter, r *http.Request)
 	}
 
 	if err := writeJson(w, 200, map[string]interface{}{
-		"hotels": hotels,
+		"category": input.Category,
+		"hotels":   hotels,
 	}); err != nil {
 		writeError(w, 500, err)
 	}

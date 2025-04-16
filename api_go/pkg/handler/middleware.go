@@ -5,7 +5,6 @@ import (
 	"errors"
 	"fmt"
 	"net/http"
-	"strings"
 )
 
 const (
@@ -15,21 +14,11 @@ const (
 
 func (h *Handler) userIdentity(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		header := r.Header.Get(authorizationHeader)
-		if header == "" {
-			writeError(w, 401, fmt.Errorf("empty auth header"))
-			return
-		}
+		token, err := r.Cookie("authToken")
 
-		headerParts := strings.Split(header, " ")
-		if len(headerParts) != 2 {
-			writeError(w, 401, fmt.Errorf("invalid auth header"))
-			return
-		}
-
-		userId, err := h.services.Authorization.ParseToken(headerParts[1])
+		userId, err := h.services.Authorization.ParseToken(token.Value)
 		if err != nil {
-			writeError(w, 401, fmt.Errorf("invalid auth header"))
+			writeError(w, 401, fmt.Errorf("invalid auth headasder"))
 			return
 		}
 

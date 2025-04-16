@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hostel_booking/theme/colors.dart';
 
-import 'package:hostel_booking/theme/colors.dart';
 
 class MainContainer extends StatelessWidget{
   const MainContainer({

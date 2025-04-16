@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:hostel_booking/theme/colors.dart';
-import 'package:hostel_booking/repositories/hotels/hotel_repo.dart';
 
 class ConfirmationButton extends StatelessWidget{
   const ConfirmationButton({

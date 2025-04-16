@@ -1,25 +1,47 @@
 import 'package:flutter/material.dart';
 
+import '../../../repositories/hotels/hotel_repo.dart';
 import 'widgets.dart';
 
-class CategoryRow extends StatelessWidget {
-  const CategoryRow({
-    super.key,
-    required this.categoryText,
-    required this.textContainerHeight,
-  });
+class CategoryRow extends StatefulWidget {
+  const CategoryRow({super.key});
 
-  final String categoryText;
-  final double textContainerHeight;
+  @override
+  State<CategoryRow> createState() => _CategoryRowState();
+}
 
+class _CategoryRowState extends State<CategoryRow> {
+
+  //final String categoryTitle;
+
+  //final Map<String, dynamic> response;
+
+  @override
+  void initState() {
+    super.initState();
+    _getHotels();
+  }
+
+  void _getHotels() async {
+    var hotelsResponse = await HotelRepo.getHotelsByCategory('sunny days');
+    var responseCode = hotelsResponse['status_code'];
+    debugPrint(responseCode.toString());
+    debugPrint(hotelsResponse['hotels_list'].toString());
+  }
+
+  void parseResponse(Map<String, dynamic> response){
+    response.forEach((key, value){
+      debugPrint(value);
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         CategorySubtitle(
-          categoryText: categoryText,
-          textContainerHeight: textContainerHeight,
+          categoryText: '',
+          textContainerHeight: 60,
         ),
         Container(
           alignment: Alignment.center,

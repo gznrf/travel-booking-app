@@ -5,6 +5,7 @@ import (
 	"hotel_booking/models"
 	"hotel_booking/utils"
 	"net/http"
+	"time"
 )
 
 func (h *Handler) signUp(w http.ResponseWriter, r *http.Request) {
@@ -52,6 +53,16 @@ func (h *Handler) signIn(w http.ResponseWriter, r *http.Request) {
 		writeError(w, 400, err)
 		return
 	}
+	cookie := &http.Cookie{
+		Name:     "authToken",
+		Value:    token,
+		Path:     "/",
+		HttpOnly: true,
+		Secure:   false,
+		SameSite: http.SameSiteStrictMode,
+		Expires:  time.Now().Add(72 * time.Hour),
+	}
+	http.SetCookie(w, cookie)
 
 	if err := writeJson(w, 200, map[string]interface{}{
 		"JWT":          token,

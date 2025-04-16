@@ -9,6 +9,8 @@ class HotelBookingApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Бронирование отелей',
+      debugShowCheckedModeBanner: false,
+
       theme: theme,
       routes: routes,
       initialRoute: '/sign-up',

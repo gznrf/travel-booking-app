@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hostel_booking/features/home/widgets/main_heading.dart';
+import '/repositories/hotels/hotel_repo.dart';
 import '../home.dart';
 
 class HomePage extends StatefulWidget {
@@ -11,11 +12,11 @@ class HomePage extends StatefulWidget {
 
 class _HomePage extends State<HomePage> {
 
-  @override
+  /*@override
   void didChangeDependencies() {
 
     super.didChangeDependencies();
-  }
+  }*/
 
   @override
   Widget build(BuildContext context) {
@@ -34,8 +35,8 @@ class _HomePage extends State<HomePage> {
                     CategoryTitle(
                       categoryText: 'Разные отели по категориям',
                     ),
-                    CategoryRow(categoryText: 'Для встреч по бизнесу и совещаний', textContainerHeight: 60,),
-                    CategoryRow(categoryText: 'Для жаркого отдыха', textContainerHeight: 40,),
+                    CategoryRow(),
+                    CategoryRow(),
 
                   ],
                 ),

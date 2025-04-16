@@ -1,0 +1,48 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15.12
+    container_name: hostel_db
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: qweqwe
+      POSTGRES_DB: hostel
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    networks:
+      - hostel_net
+
+  backend:
+    build:
+      context: .
+      dockerfile: api_go/Dockerfile
+    container_name: hostel_api
+    depends_on:
+      - db
+    ports:
+      - "8080:8080"
+    networks:
+      - hostel_net
+
+  frontend:
+    image: nginx:alpine
+    container_name: hostel_frontend
+    depends_on:
+      - backend
+    ports:
+      - "80:80"
+    volumes:
+      - ./fontend/build/web:/usr/share/nginx/html
+    restart: always
+    networks:
+      - hostel_net
+
+volumes:
+  pgdata:
+
+networks:
+  hostel_net:

@@ -2,6 +2,9 @@ package repository
 
 import (
 	"fmt"
+	"log"
+	"time"
+
 	"github.com/jmoiron/sqlx"
 )
 
@@ -28,9 +31,17 @@ func NewPostgresDB(cfg Config) (*sqlx.DB, error) {
 		return nil, err
 	}
 
-	err = db.Ping()
+	for i := 0; i < 10; i++ {
+		err = db.Ping()
+		if err == nil {
+			break
+		}
+		log.Printf("Waiting for DB to be ready (%d/10)...", i+1)
+		time.Sleep(2 * time.Second)
+	}
+
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("DB not reachable: %w", err)
 	}
 
 	return db, nil
