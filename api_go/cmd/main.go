@@ -2,17 +2,19 @@ package main
 
 import (
 	"context"
-	"github.com/joho/godotenv"
-	_ "github.com/lib/pq"
-	"github.com/spf13/viper"
-	"hotel_booking/app"
-	"hotel_booking/pkg/handler"
-	"hotel_booking/pkg/repository"
-	"hotel_booking/pkg/service"
 	"log"
 	"os"
 	"os/signal"
 	"syscall"
+
+	"github.com/joho/godotenv"
+	_ "github.com/lib/pq"
+	"github.com/spf13/viper"
+
+	"hotel_booking/app"
+	"hotel_booking/pkg/handler"
+	"hotel_booking/pkg/repository"
+	"hotel_booking/pkg/service"
 )
 
 func main() {
